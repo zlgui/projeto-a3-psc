@@ -2,6 +2,6 @@
 
 using namespace std;
 
-void novoPedido(){
+void menuNovoPedido(){
     cout << "novopedidoteste";
 };

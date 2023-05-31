@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ViewNovoPedido.cpp"
+#include "MenuNovoPedido.cpp"
 
 using namespace std;
 
@@ -21,8 +21,7 @@ void menuPrincipal(){
     switch (resposta)
     {
     case 1:
-        // View novo pedido
-        novoPedido();
+        menuNovoPedido();
         break;
 
     case 2:
