@@ -1,6 +1,6 @@
 #include <iostream>
 #include <windows.h>
-#include "view/MenuPrincipal.cpp"
+#include "include/MenuPrincipal.h"
 
 using namespace std;
 
