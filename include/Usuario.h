@@ -28,6 +28,7 @@ public:
     string getTipoUsuario();
     void setTipoUsuario(string tipoUsuario);
 
+
 };
 
 #endif
