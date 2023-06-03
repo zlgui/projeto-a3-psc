@@ -26,7 +26,7 @@ void menuPrincipal(){
         break;
 
     case 2:
-        cout << "Pedidos em processamento"; 
+        cout << "Pedidos em processamento";
         break;
 
     case 3: 

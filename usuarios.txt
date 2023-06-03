@@ -1,0 +1,3 @@
+01#lalala@email.com#1234#Usuario#fulaninho
+02#admin@email.com#1234#Admin#fulaninhoAdmin
+012312#admin@email.com#1234#Admin#fulaninhoAdmin
