@@ -17,10 +17,10 @@ private:
     string nome;
 
     friend ostream& operator<<(ostream& os, const Usuario& objeto) {
-        os << "ID: " << objeto.id << " ";
-        os << "Email: " << objeto.email << " ";
-        os << "Senha: " << objeto.senha << endl;
-        os << "Tipo do usuário: " << objeto.tipoUsuario << endl;
+        os << "\nID: " << objeto.id << "   ";
+        os << "Email: " << objeto.email << "   ";
+        os << "Senha: " << objeto.senha << "   ";
+        os << "Tipo do usuário: " << objeto.tipoUsuario << "   ";
         os << "Nome: " << objeto.nome << endl;
         return os;
     }

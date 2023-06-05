@@ -116,6 +116,7 @@ Usuario Usuario::quebraLinha(string a) {
     return x;
 }
 
+
 vector<Usuario> Usuario::listarUsuarios() {
 
   fstream arquivo("usuarios.txt");

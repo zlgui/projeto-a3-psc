@@ -11,9 +11,8 @@ int main() {
     //menuPrincipal();
 
     Usuario user;
-    Usuario& refUser = user;
 
-    refUser.listarUsuarios();
+    user.listarUsuarios();
     
 }
 
