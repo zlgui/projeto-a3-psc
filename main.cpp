@@ -8,11 +8,7 @@ using namespace std;
 int main() {
     SetConsoleOutputCP(CP_UTF8);
 
-    //menuPrincipal();
-
-    Usuario user;
-
-    user.listarUsuarios();
+    menuPrincipal();
     
 }
 
