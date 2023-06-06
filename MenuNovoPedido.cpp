@@ -1,5 +1,6 @@
 #include <iostream>
 #include "include/MenuPrincipal.h"
+#include "include/NovoPedido.h"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ void menuNovoPedido(){
     switch (resposta)
     {
     case 1:
-        cout << "novo pedido aqui";
+        novoPedido();
         break;
 
     case 2:
