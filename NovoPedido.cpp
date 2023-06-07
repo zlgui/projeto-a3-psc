@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string>
+#include <vector>
+
+#include "include/Sabor.h"
+
 using namespace std;
 
-void novoPedido(){
+string nomeCliente(){
     string nomeCliente;
-    unsigned short int numeroMesa;
-    unsigned short cpfNota;
-    unsigned short tamanhoPizza;
-    string cpf;
 
     cout <<"\n/////////////////////////////////// Preencha os dados do cliente /////////////////////////////////////\n";
 
@@ -20,14 +20,27 @@ void novoPedido(){
         cin >> nomeCliente;
     }
 
+    return nomeCliente;
+}
+
+string numeroMesa(){
+    string numeroMesa;
+    
     cout << "\nDigite o número da mesa: ";
     cin >> numeroMesa;
 
-    //Verifica o número da mesa
-    while(numeroMesa <=0 && numeroMesa > 50){
-        cout << "\nDigite uma mesa válida: ";
+    //Valida o número da mesa
+    while(numeroMesa.empty()){
+        cout << "\nO número da mesa não pode ficar vazio, por favor insira um novo número: ";
         cin >> numeroMesa;
     }
+
+    return numeroMesa;
+}
+
+string escolherCPF(){
+    unsigned short cpfNota;
+    string cpf;
 
     cout << "\nO cliente deseja CPF na nota?";
     cout << "\n 1- Sim | 2- Não\n";
@@ -52,7 +65,12 @@ void novoPedido(){
         cpf = "";
     }
 
+    return cpf;
+}
 
+unsigned short tamanhoPizza(){
+    unsigned short tamanhoPizza;
+   
     cout <<"\n/////////////////////////////////// Escolha o tamanho da pizza /////////////////////////////////////\n";
 
     cout <<"\n1- Nenhuma pizza  |  2- Pequena - R$ 50,00 |  3- Média - R$ 80.00 |  4- Grande - R$ 100,00\n";
@@ -65,4 +83,25 @@ void novoPedido(){
         cout << "\nInsira um tamanho válido: ";
         cin >> tamanhoPizza;
     }
+
+    return tamanhoPizza;
+}
+
+vector<Sabor> escolherSabores(){
+
+     cout <<"\n/////////////////////////////////// Escolha os sabores da pizza /////////////////////////////////////\n";
+}
+
+void novoPedido(){
+    
+   string nome = nomeCliente();
+   string numeroDaMesa = numeroMesa();
+   string cpf = escolherCPF();
+   unsigned short tamanhoDaPizza = tamanhoPizza();
+
+    if(tamanhoDaPizza != 1){
+        //sabores aqui
+    }
+
+
 }
