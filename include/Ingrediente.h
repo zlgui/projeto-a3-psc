@@ -14,11 +14,22 @@ class Ingrediente{
     int id;
     string nome;
 
+    friend ostream& operator<<(ostream& os, const Ingrediente& objeto) {
+        os << "\nID: " << objeto.id << "   ";
+        os << "Nome: " << objeto.nome << endl;
+        return os;
+    }
+
   public:
     Ingrediente(int id, string nome);
+    Ingrediente();
     int getId();
     string getNome();
     void setNome(string nome);
+
+
+    Ingrediente quebraLinha(string a);
+    vector<Ingrediente> listarIngredientes();
 };
 
-#endif 
+#endif

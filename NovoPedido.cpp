@@ -25,7 +25,7 @@ string nomeCliente(){
 
 string numeroMesa(){
     string numeroMesa;
-    
+
     cout << "\nDigite o número da mesa: ";
     cin >> numeroMesa;
 
@@ -70,7 +70,7 @@ string escolherCPF(){
 
 unsigned short tamanhoPizza(){
     unsigned short tamanhoPizza;
-   
+
     cout <<"\n/////////////////////////////////// Escolha o tamanho da pizza /////////////////////////////////////\n";
 
     cout <<"\n1- Nenhuma pizza  |  2- Pequena - R$ 50,00 |  3- Média - R$ 80.00 |  4- Grande - R$ 100,00\n";
@@ -93,7 +93,7 @@ vector<Sabor> escolherSabores(){
 }
 
 void novoPedido(){
-    
+
    string nome = nomeCliente();
    string numeroDaMesa = numeroMesa();
    string cpf = escolherCPF();

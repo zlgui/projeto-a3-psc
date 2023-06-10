@@ -77,17 +77,17 @@ void Usuario::setNome(string nome)
 Usuario Usuario::quebraLinha(string a) {
     int contador = 0, contadorSharp = 0;
     string idString, email, senha, tipoUsuario, nome;
-    
+
     for (int i = 0; i < a.size(); i++) {
         vector<char> vt;
         while (contador < a.size() && a[contador] != '#') {
             vt.push_back(a[contador]);
             contador++;
         }
-        
+
         // Converter vetor de char para string correspondente
         string atributo(vt.data(), vt.size());
-        
+
         if (contadorSharp == 0) {
             idString = atributo;
         } else if (contadorSharp == 1) {
@@ -99,10 +99,10 @@ Usuario Usuario::quebraLinha(string a) {
         } else if (contadorSharp == 4) {
             nome = atributo;
         }
-        
+
         contadorSharp++;
         contador++;
-        
+
         if (contadorSharp >= 5) {
             break;
         }
@@ -123,21 +123,17 @@ vector<Usuario> Usuario::listarUsuarios() {
   auto vetorUsuarios = vector<Usuario>();
 
   string linha;
-  
+
   if (arquivo.is_open()) {
     while (getline(arquivo, linha)) {
       Usuario i = quebraLinha(linha);
       vetorUsuarios.push_back(i);
     }
-    
+
   } else {
       cout << "Erro ao abrir o arquivo." << endl;
   }
-  
-  for (const auto& usuario : vetorUsuarios) {
-    cout << usuario << " ";
-  }
-  
+
   arquivo.close();
   return vetorUsuarios;
 
