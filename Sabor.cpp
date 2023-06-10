@@ -37,7 +37,7 @@ void Sabor::setNome(string nome){
   this->nome = nome;
 }
 
-Sabor quebraLinha(string a){
+Sabor Sabor::quebraLinha(string a){
    int contador = 0, contadorSharp = 0;
     string idString, nome, ingredientes;
 
@@ -100,7 +100,9 @@ Sabor quebraLinha(string a){
     return x;
 };
 
-vector<Sabor> listarSabores(){
+
+
+vector<Sabor> Sabor::listarSabores(){
   fstream arquivo("sabores.txt");
   auto vetorSabores = vector<Sabor>();
 
