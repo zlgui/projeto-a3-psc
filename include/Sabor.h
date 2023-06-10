@@ -16,7 +16,7 @@ class Sabor{
     vector<Ingrediente> ingrediente;
 
     friend ostream& operator<<(ostream& os, const Sabor& objeto) {
-        os << "Nome: " << objeto.nome << endl;
+        os << "Nome: " << objeto.nome << " | ";
         return os;
     }
 

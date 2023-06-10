@@ -88,19 +88,70 @@ unsigned short tamanhoPizza(){
 }
 
 vector<Sabor> escolherSabores(){
+    unsigned short quantSabores;
 
      cout <<"\n/////////////////////////////////// Escolha os sabores da pizza /////////////////////////////////////\n";
+
+     cout <<"\nQuantos sabores você deseja? ";
+     cin >> quantSabores;
+
+     //Valida a quantidade de sabores
+     while(quantSabores != 1 && quantSabores != 2 && quantSabores !=3 && quantSabores != 4){
+        if(quantSabores < 1){
+            cout <<"A quantidade mínima de sabores é 1, insira uma quantidade válida: ";
+        } else if(quantSabores > 4){
+            cout <<"A quantidade máxima de sabores é 4, insira uma quantidade válida: ";
+        } else{
+            cout <<"Por favor insira uma quantidade válida: ";
+        }
+        cin >> quantSabores;
+     }
+
+     cout << endl;
+
+     vector<Sabor> saboresPedido;
+     Sabor sabores = Sabor();
+
+    //Imprime sabores
+    for(Sabor sabor : sabores.listarSabores()){
+        cout << sabor;
+    }
+
+    cout << endl;
+
+     //Armazena os sabores escolhidos em um vetor
+     for(int i= 0; i< quantSabores; i++){
+        string s;
+        bool encontrado = false;
+
+        while(encontrado == false) {
+            cout <<"\nEscolha o sabor " << i+1 <<": ";
+            cin >> s;
+
+            for(Sabor sabor : sabores.listarSabores()){
+                if(s == sabor.getNome()){
+                    saboresPedido.push_back(sabor);
+                    encontrado = true;
+                }
+            }
+
+            if(!encontrado){
+                cout <<"\nO sabor digitado não foi encontrado!\n";
+            }
+        }
+     }
+
+     return saboresPedido;
 }
 
 void novoPedido(){
-
    string nome = nomeCliente();
    string numeroDaMesa = numeroMesa();
    string cpf = escolherCPF();
    unsigned short tamanhoDaPizza = tamanhoPizza();
-
+   
     if(tamanhoDaPizza != 1){
-        //sabores aqui
+        vector<Sabor> saboresPizza = escolherSabores();
     }
 
 
