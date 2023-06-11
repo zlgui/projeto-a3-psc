@@ -2,21 +2,37 @@
 #define TAMANHOPIZZA_H_
 
 #include <iostream>
+#include <vector>
+#include <string>
 using namespace std;
 
 class TamanhoPizza{
     private:
-        unsigned short tamanho;
-        float valor;
+        unsigned long int id;
+        string tamanho;
+        double valor;
+
+        friend ostream& operator<<(ostream& os, const TamanhoPizza& objeto) {
+        os << objeto.id << " - ";
+        os << objeto.tamanho << " - ";
+        os << "R$ " << objeto.valor << " | ";
+        return os;
+    }
+
     public:
-        TamanhoPizza(unsigned short tamanho, float valor);
+        TamanhoPizza(unsigned long int id, string tamanho, double valor);
         TamanhoPizza();
 
-        unsigned short getTamanho();
-        void setTamanho(unsigned short tamanho);
+        unsigned long int getId();
 
-        float getValor();
-        void setValor(float valor);
+        string getTamanho();
+        void setTamanho(string tamanho);
+
+        double getValor();
+        void setValor(double valor);
+
+        TamanhoPizza quebraLinha(string a);
+        vector<TamanhoPizza> listarTamanhoPizza();
 };
 
 #endif

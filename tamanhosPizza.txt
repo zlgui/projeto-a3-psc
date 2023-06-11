@@ -1,0 +1,4 @@
+0#Nenhuma#00.00
+1#Pequeno#50.00
+2#Médio#80.00
+3#Grande#100.00

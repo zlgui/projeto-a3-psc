@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "include/Sabor.h"
+#include "include/TamanhoPizza.h"
 
 using namespace std;
 
@@ -68,23 +69,37 @@ string escolherCPF(){
     return cpf;
 }
 
-unsigned short tamanhoPizza(){
+TamanhoPizza tamanhoPizza(){
     unsigned short tamanhoPizza;
+    TamanhoPizza tamanhosPizza = TamanhoPizza();
 
     cout <<"\n/////////////////////////////////// Escolha o tamanho da pizza /////////////////////////////////////\n";
 
-    cout <<"\n1- Nenhuma pizza  |  2- Pequena - R$ 50,00 |  3- Média - R$ 80.00 |  4- Grande - R$ 100,00\n";
+    cout << endl;
+
+
+    for(TamanhoPizza tamanho : tamanhosPizza.listarTamanhoPizza()){
+        cout << tamanho;
+    }
+
+    cout << endl;
 
     cout <<"\n* Qual tamanho de pizza o cliente deseja? ";
     cin >> tamanhoPizza;
 
-    //Valida o tamanho da pizza
-    while(tamanhoPizza != 1 && tamanhoPizza != 2 && tamanhoPizza != 3 && tamanhoPizza != 4){
-        cout << "\nInsira um tamanho válido: ";
-        cin >> tamanhoPizza;
+    TamanhoPizza tamanhoSelecionado;
+    bool encontrou = false;
+    while (encontrou == false) {
+       for(TamanhoPizza tamanho : tamanhosPizza.listarTamanhoPizza()){
+            if(tamanhoPizza == tamanho.getId()){
+                tamanhoSelecionado = tamanho;
+                encontrou = true;
+                break;
+            }
+        }
     }
 
-    return tamanhoPizza;
+    return tamanhoSelecionado;
 }
 
 vector<Sabor> escolherSabores(){
@@ -148,11 +163,8 @@ void novoPedido(){
    string nome = nomeCliente();
    string numeroDaMesa = numeroMesa();
    string cpf = escolherCPF();
-   unsigned short tamanhoDaPizza = tamanhoPizza();
-   
-    if(tamanhoDaPizza != 1){
-        vector<Sabor> saboresPizza = escolherSabores();
-    }
+   TamanhoPizza tamanhoDaPizza = tamanhoPizza();
+   vector<Sabor> saboresPizza = escolherSabores();
 
 
 }
