@@ -2,6 +2,7 @@
 #define BEBIDA_H_
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class Bebida{
@@ -12,7 +13,7 @@ class Bebida{
     string descricao;
 
   public:
-    Bebida(int id, string tipo, string tamanho, string descricao);
+    Bebida(int id, string tipo, string tamanho);
 
     int getId();
 
@@ -21,9 +22,10 @@ class Bebida{
 
     string getTamanho();
     void setTamanho(string tamanho);
-    
-    string getDescricao();
-    void setDescricao(string descricao);
+
+    Bebida quebraLinha(string a);
+
+    vector<Bebida> listarBebidas();
 };
 
 #endif

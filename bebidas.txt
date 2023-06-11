@@ -1,0 +1,2 @@
+1#Coca cola lata#300ml
+2#Pepsi#2L

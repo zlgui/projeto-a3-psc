@@ -4,6 +4,7 @@
 
 #include "include/Sabor.h"
 #include "include/TamanhoPizza.h"
+#include "include/Bebida.h"
 
 using namespace std;
 
@@ -159,12 +160,18 @@ vector<Sabor> escolherSabores(){
      return saboresPedido;
 }
 
+vector<Bebida> escolherBebidas(){
+     cout <<"\n/////////////////////////////////// Escolha As bebidas /////////////////////////////////////\n";
+
+}
+
 void novoPedido(){
    string nome = nomeCliente();
    string numeroDaMesa = numeroMesa();
    string cpf = escolherCPF();
    TamanhoPizza tamanhoDaPizza = tamanhoPizza();
    vector<Sabor> saboresPizza = escolherSabores();
+   vector<Bebida> bebidas;
 
 
 }
